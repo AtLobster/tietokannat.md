@@ -1,0 +1,78 @@
+
+
+Where-osan liitosehto harjoitukset
+
+1.
+select country.name as 'country name', airport.name as 'airport name' 
+from country, airport
+where airport.iso_country = "IS" and country.name = "Iceland";
+https://prnt.sc/CUDnU1dKhSf0
+
+2.
+select name as "airport name" 
+from airport
+where airport.type = "large_airport" and airport.iso_country = "FR";
+https://prnt.sc/rAneI0GRRN3K
+
+3.
+select country.name as "country_name", airport.name as "airport_name" 
+from country, airport
+where country.name = "Antarctica" and airport.continent = "AN"
+order by id asc;
+https://prnt.sc/vtSHm2Az6VsF
+
+
+4.
+select elevation_ft from game
+join airport on game.location = airport.ident
+where game.id = "1";
+https://prnt.sc/lbp9WE1EwgfD
+
+5.
+select elevation_ft * 0.3048 as "elevation_m"
+from game
+join airport on game.location = airport.ident
+where game.id = "1";
+https://prnt.sc/rnYZiaGLSPTF
+
+6.
+select airport.name
+from game
+join airport on game.location = airport.ident
+where game.id = "3";
+https://prnt.sc/ZVRuuqdLl2AS
+
+7.
+select country.name
+from game
+join airport on game.location = airport.ident
+join country on airport.iso_country = country.iso_country
+where game.id = "3";
+https://prnt.sc/ry5jbL9xMGqT
+
+8.
+select g.name
+from goal_reached as gr
+join goal as g on gr.goal_id = g.id
+where gr.game_id = "1";
+https://prnt.sc/sw1jp40AoBAk
+
+9.
+select airport.name
+from game
+join goal_reached ON game.id = goal_reached.game_id
+join goal on goal_reached.goal_id = goal.id
+join airport on game.location = airport.ident
+where game.id = "3" and goal.name = "CLOUDS";
+https://prnt.sc/83hLIPlj07hF
+
+
+10.
+select country.name
+    -> from game
+    -> join goal_reached gr on game.id = gr.game_id
+    -> join goal on gr.goal_id = goal.id
+    -> join airport on game.location = airport.ident
+    -> join country on airport.iso_country = country.iso_country
+    -> where game.id = "3" and goal.name = "CLOUDS";
+https://prnt.sc/aKawU7Kw-Wqd
