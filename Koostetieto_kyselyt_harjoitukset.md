@@ -71,5 +71,15 @@ select count(*)
 
 
 10.
+select name
+    -> from airport
+    -> order by latitude_deg asc
+    -> limit 1;
++----------------------------+
+| name                       |
++----------------------------+
+| South Pole Station Airport |
++----------------------------+
+   ![image](https://github.com/user-attachments/assets/3d970d65-8291-4d8d-a180-cc4e0469d4e5)
 
   
